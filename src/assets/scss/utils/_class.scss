@@ -1,0 +1,53 @@
+  @charset "utf-8";
+
+  // 清除浮动
+  %clearfix{
+      zoom:1;
+      &::after{
+          display:block;
+          height:0;
+          content:".";
+          clear:both;
+          overflow:hidden;
+          visibility:hidden;
+      }
+  }
+
+  // 隐藏元素 @extend %visuallyhidden;
+  %visuallyhidden {
+      margin: -1px;
+      padding: 0;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      clip: rect(0, 0, 0, 0);
+      position: absolute;
+  }
+
+  // 图片滑过变亮
+  %imglight {
+    &:hover {
+      filter: brightness(120%);
+    }
+  }
+
+  // 文字滑过特效
+  %textlight {
+    &:hover {
+      color: $themeColor;
+      cursor: pointer;
+    }
+  }
+
+  // 滑过特效
+  %alllight {
+    &:hover {
+      i, img {
+        filter: brightness(120%);
+      }
+      span {
+        color: $themeColor;
+      }
+    }
+  }
